@@ -1,0 +1,49 @@
+.mainBody {
+    background-color: rgb(178, 223, 241);
+}
+
+#skiTypes {
+    text-align: center;
+    border: 1px solid black;
+    margin-top: 20px;
+    height: 100px;
+}
+
+.nameAndDescription {
+    height: 150px;
+    width: 400px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+
+}
+
+.btnAll {
+    width: 150px;
+    margin: 5px;
+    color: black;
+    font-weight: 700;
+    margin: 7px
+}
+
+.btn1 {
+    background-color: transparent;
+    border: 2px solid blue;
+}
+
+.btn2 {
+    background-color: transparent;
+    border: 2px solid green;
+}
+
+.btn3 {
+    background-color: transparent;
+    border: 2px solid red;
+}
+ 
+.buttons {
+    text-align: center;;
+}
+
+#skiTypes {
+    font-size: 60px;
+}
