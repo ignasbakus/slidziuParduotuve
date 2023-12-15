@@ -18,20 +18,34 @@ $categories = CategoryController::getAll();
 </head>
 
 <body class="mainBody">
-    <div class="container2">
+    <div class="container1">
         <div class="row">
-            <div class="col heading">
+            <div class="col-1"></div>
+            <div class="col-10 heading">
                 <h1 id="skiTypes">Slidžių tipai</h1>
             </div>
+            <div class="col-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <form class="buttons" action="" method="post">
+                    <button class="buttonCreate btnAll" type="submit">Create</button>
+                </form>
+            </div>
+            <div class="col-1"></div>
         </div>
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
                 <?php foreach ($categories as $key => $category) { ?>
                     <div class="row">
-                        <div class="col-10 nameAndDescription">
+                        <div class="col-6 nameAndDescription">
                             <h3 class='skiTypeName'><?= $category->name ?></h3>
                             <p class='skiTypeDescription'><?= $category->description ?></p>
+                        </div>
+                        <div class="col-4 ">
+                            <img class="skiImages" src="<?= $category->photo ?>" alt="">
                         </div>
                         <div class="col-2 buttons">
                             <form action="" method="post">
