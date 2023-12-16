@@ -1,19 +1,19 @@
 .mainBody {
-  background-color: rgb(178, 223, 241);
+  background-color: rgb(229, 236, 248);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .heading {
   text-align: center;
-  border: 1px solid black;
+  border-bottom: 5px groove rgb(133,196,227);
   margin-top: 20px;
   height: 100px;
 }
 
 .nameAndDescription {
-  height: 135px;
+  height: 150px;
   width: 400px;
   margin-bottom: 10px;
-  border: 1px solid black;
 }
 
 .btnAll {
@@ -24,23 +24,27 @@
   margin: 7px;
 }
 
-.buttonCreate{
-    margin: 30px;
+.buttonCreate {
+  margin: 30px;
+  border-radius: 12px;
 }
 
 .btn1 {
   background-color: transparent;
   border: 2px solid blue;
+  border-radius: 12px;
 }
 
 .btn2 {
   background-color: transparent;
   border: 2px solid green;
+  border-radius: 12px;
 }
 
 .btn3 {
   background-color: transparent;
   border: 2px solid red;
+  border-radius: 12px;
 }
 
 .buttons {
@@ -52,7 +56,23 @@
 }
 
 .skiImages {
-  max-width: 400px;
-  border: 1px solid black;
-  padding: 10px;
+  float: left;
+  width: 100%;
+  max-height: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* border-radius: 12px; */
+  /* height: 100px; */
+  /* object-fit: cover; */
+  /* border: 1px solid black; */
+  /* padding: 10px; */
+  /* margin-bottom: 10px; */
+}
+
+.borderButtonsCol {
+  border-left: 2px solid rgb(133,196,227);
+}
+
+.mainBodyRow{
+  border-bottom: 2px solid rgb(133,196,227);;
 }
