@@ -25,4 +25,16 @@ class Category
         }
         return $categories;
     }
+
+    public static function find($id)
+    {
+        $category = new Category();
+        $db = new mysqli("localhost", "root", "", "web_mokymai_shop");
+        $sql = "SELECT * from categories WHERE id =" . $id;
+        $result = $db->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            $category = new Category($row['id'], $row['name'], $row['description'], $row['photo']);
+        }
+        return $category;
+    }
 }

@@ -51,10 +51,11 @@ $categories = CategoryController::getAll();
                             <img class="skiImages" src="<?= $category->photo ?>" alt="">
                         </div>
                         <div class="col-2 buttons borderButtonsCol">
-                            <form action="" method="post">
+                            <form action="./show.php?id=<?= $category->id ?>" method="post">
                                 <button class="btn1 btnAll" type="submit">Show</button>
                             </form>
-                            <form action="" method="post">
+                            <form action="./edit.php" method="get">
+                                <input type="hidden" name="id" value="<?= $category->id ?>">
                                 <button class="btn2 btnAll" type="submit">Edit</button>
                             </form>
                             <form action="" method="post">

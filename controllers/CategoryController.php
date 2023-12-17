@@ -8,7 +8,10 @@ public static function getAll() {
     return $categories;
 }
 
-
+public static function find($id){
+    $category = Category::find($id);
+    return $category;
+}
 
 
 }

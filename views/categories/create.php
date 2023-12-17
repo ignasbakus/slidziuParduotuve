@@ -10,10 +10,6 @@
 <body>
     <div class="container">
         <div class="createInputs">
-            <label for="id">ID:</label>
-            <input type="text" class="createCategoryInputs" id="id" placeholder="Enter category's ID">
-        </div>
-        <div class="createInputs">
             <label for="name">Name:</label>
             <input type="text" class="createCategoryInputs" id="name" placeholder="Enter category's name">
         </div>
