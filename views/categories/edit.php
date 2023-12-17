@@ -13,6 +13,7 @@ if (!isset($_GET["id"])) {
 include "../../controllers/CategoryController.php";
 $category = CategoryController::find($_GET["id"]);
 // print_r($category);die;
+// blaba
 ?>
 
 <!DOCTYPE html>
