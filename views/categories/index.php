@@ -43,11 +43,11 @@ $categories = CategoryController::getAll();
             <div class="col-10">
                 <?php foreach ($categories as $key => $category) { ?>
                     <div class="row mainBodyRow">
-                        <div class="col-6 nameAndDescription">
-                            <h3 class='skiTypeName'><?= $category->name ?></h3>
-                            <p class='skiTypeDescription'><?= $category->description ?></p>
+                        <div class="col-5 nameAndDescription">
+                            <h2 class='skiTypeName'><?= $category->name ?></h2>
+                            <!-- <p class='skiTypeDescription'><?= $category->description ?></p> -->
                         </div>
-                        <div class="col-4 ">
+                        <div class="col-5 ">
                             <img class="skiImages" src="<?= $category->photo ?>" alt="">
                         </div>
                         <div class="col-2 buttons borderButtonsCol">
