@@ -31,7 +31,7 @@ $categories = CategoryController::getAll();
                     </h2>
                 </div>
                 <div class="dropdown">
-                    <button class="dropbtn">Kategorijos</button>
+                    <button class="btnHeader">Kategorijos</button>
                     <div class="dropdown-content">
                         <?php foreach ($categories as $key => $category) { ?>
                             <a href="./show.php?id=<?= $category->id?>"><?= $category->name ?></a>
@@ -39,7 +39,7 @@ $categories = CategoryController::getAll();
                     </div>
                 </div>
                 <div class="pageMenu ">
-                    <p>Apie mus</p>
+                    <button class="btnHeader">Apie mus</button>
                 </div>
             </div>
         </div>
