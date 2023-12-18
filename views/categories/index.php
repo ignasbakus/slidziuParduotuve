@@ -23,6 +23,27 @@ $categories = CategoryController::getAll();
 <body class="mainBody">
     <div class="container1">
         <div class="row">
+            <div class="col header">
+                <div class="logoAndImage">
+                    <h2 id="shopNameAndImage">
+                        Ski Shop
+                        <img id="logoImage" src="../../images/b9a9bce831a3d22332cd90232f73af0c.jpg" alt="">
+                    </h2>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Kategorijos</button>
+                    <div class="dropdown-content">
+                        <?php foreach ($categories as $key => $category) { ?>
+                            <a href="./show.php?id=<?= $category->id?>"><?= $category->name ?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+                <div class="pageMenu ">
+                    <p>Apie mus</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-1"></div>
             <div class="col-10 heading">
                 <h1 id="skiTypes">Slidžių tipai</h1>
