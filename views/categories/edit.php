@@ -1,16 +1,16 @@
 <?php
 
+include "../../controllers/CategoryController.php";
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    echo 'atejom su postu';
-    print_r($_POST);die;
-    // header("location: ./edit.php");
+    CategoryController::update($_POST['id']);
+    header("location: ./index.php");
 }
 
 if (!isset($_GET["id"])) {
     header("location: ./index.php");
 }
 
-include "../../controllers/CategoryController.php";
 $category = CategoryController::find($_GET["id"]);
 // print_r($category);die;
 // blaba

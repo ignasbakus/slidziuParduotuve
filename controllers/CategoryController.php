@@ -13,6 +13,14 @@ public static function find($id){
     return $category;
 }
 
+public static function update($id){
+    $category = Category::find($id);
+    $category->name = $_POST['name'];
+    $category->description = $_POST['description'];
+    $category->photo = $_POST['photo'];
+    $category->save();
+}
+
 
 }
 

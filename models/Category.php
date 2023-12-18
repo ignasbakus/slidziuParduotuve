@@ -23,6 +23,7 @@ class Category
         while ($row = $result->fetch_assoc()) {
             $categories[] = new Category($row['id'], $row['name'], $row['description'], $row['photo']);
         }
+        $db->close();
         return $categories;
     }
 
@@ -30,11 +31,25 @@ class Category
     {
         $category = new Category();
         $db = new mysqli("localhost", "root", "", "web_mokymai_shop");
-        $sql = "SELECT * from categories WHERE id =" . $id;
-        $result = $db->query($sql);
+        $sql = "SELECT * from categories WHERE id = ?";
+        $stmt = $db->prepare($sql);
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
         while ($row = $result->fetch_assoc()) {
             $category = new Category($row['id'], $row['name'], $row['description'], $row['photo']);
         }
+        $db->close();
         return $category;
+    }
+
+    public function save(){
+        $db = new mysqli("localhost", "root", "", "web_mokymai_shop");
+        $sql = "UPDATE `categories` SET `name`=?,`description`=?,`photo`=? WHERE id = ?";
+        $stmt = $db->prepare($sql);
+        $stmt->bind_param("sssi",$this->name, $this->description, $this->photo, $this->id);
+        $stmt->execute();
+        $db->close();
     }
 }
