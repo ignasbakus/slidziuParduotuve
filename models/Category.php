@@ -46,10 +46,29 @@ class Category
 
     public function save(){
         $db = new mysqli("localhost", "root", "", "web_mokymai_shop");
+        $sql = "INSERT INTO `categories`(`name`, `description`, `photo`) VALUES (?, ?, ?)";
+        $stmt = $db->prepare($sql);
+        $stmt->bind_param("sss",$this->name, $this->description, $this->photo);
+        $stmt->execute();
+        $db->close();
+    }
+
+    public function update(){
+        $db = new mysqli("localhost", "root", "", "web_mokymai_shop");
         $sql = "UPDATE `categories` SET `name`=?,`description`=?,`photo`=? WHERE id = ?";
         $stmt = $db->prepare($sql);
         $stmt->bind_param("sssi",$this->name, $this->description, $this->photo, $this->id);
         $stmt->execute();
         $db->close();
     }
+
+    public static function destroy($id){
+        $db = new mysqli("localhost", "root", "", "web_mokymai_shop");
+        $sql = "DELETE FROM `categories` WHERE id = ?";
+        $stmt = $db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $db->close();
+    }
+
 }

@@ -1,7 +1,13 @@
 <?php
 // include categoriescontroller
 include "../../controllers/CategoryController.php";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    CategoryController::destroy($_POST['id']);
+    header("location: ./index.php");
+}
+
 $categories = CategoryController::getAll();
+
 
 ?>
 
@@ -34,7 +40,7 @@ $categories = CategoryController::getAll();
                     <button class="btnHeader">Kategorijos</button>
                     <div class="dropdown-content">
                         <?php foreach ($categories as $key => $category) { ?>
-                            <a href="./show.php?id=<?= $category->id?>"><?= $category->name ?></a>
+                            <a href="./show.php?id=<?= $category->id ?>"><?= $category->name ?></a>
                         <?php } ?>
                     </div>
                 </div>
@@ -53,8 +59,8 @@ $categories = CategoryController::getAll();
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
-                <form class="buttons" action="./create.php" method="post">
-                    <button class="buttonCreate btnAll" type="submit">Create</button>
+                <form class="buttons" action="./create.php" method="get">
+                    <button class="buttonCreate btnAll" type="submit">Sukurti</button>
                 </form>
             </div>
             <div class="col-1"></div>
@@ -73,14 +79,15 @@ $categories = CategoryController::getAll();
                         </div>
                         <div class="col-2 buttons borderButtonsCol">
                             <form action="./show.php?id=<?= $category->id ?>" method="post">
-                                <button class="btn1 btnAll" type="submit">Show</button>
+                                <button class="btn1 btnAll" type="submit">Rodyti</button>
                             </form>
                             <form action="./edit.php" method="get">
                                 <input type="hidden" name="id" value="<?= $category->id ?>">
-                                <button class="btn2 btnAll" type="submit">Edit</button>
+                                <button class="btn2 btnAll" type="submit">Taisyti</button>
                             </form>
-                            <form action="" method="post">
-                                <button class="btn3 btnAll" type="submit">Delete</button>
+                            <form action="./index.php" method="post">
+                                <input type="hidden" name="id" value="<?= $category->id ?>">
+                                <button class="btn3 btnAll" type="submit">Ištrinti</button>
                             </form>
                         </div>
                     </div>

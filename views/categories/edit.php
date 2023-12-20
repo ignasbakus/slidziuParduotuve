@@ -13,7 +13,6 @@ if (!isset($_GET["id"])) {
 
 $category = CategoryController::find($_GET["id"]);
 // print_r($category);die;
-// blaba
 ?>
 
 <!DOCTYPE html>
