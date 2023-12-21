@@ -16,16 +16,6 @@ class CategoryController
         return $category;
     }
 
-    public static function update($id)
-    {
-        $category = Category::find($id);
-        $category->name = $_POST['name'];
-        $category->description = $_POST['description'];
-        $category->photo = $_POST['photo'];
-        $category->update();
-    }
-
-
     public static function store()
     {
         $category = new Category();
@@ -34,6 +24,15 @@ class CategoryController
         $category->photo = $_POST['photo'];
         // print_r($category);die;
         $category->save();
+    }
+
+    public static function update($id)
+    {
+        $category = Category::find($id);
+        $category->name = $_POST['name'];
+        $category->description = $_POST['description'];
+        $category->photo = $_POST['photo'];
+        $category->update();
     }
 
     public static function destroy($id) {

@@ -2,18 +2,25 @@ body {
   background-color: rgb(229, 236, 248);
 }
 
-.header {
-  display: inline-block;
+.headerMain {
   background-color: white;
-  display: flex;
-  align-items: center;
-  height: 70px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
+  
 }
 
-.logoAndImage {
-  background-color: white;
+.headerMenu{
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid black; */
+  height: 70px;
 }
+/* 
+.headerMenuRight{
+  float: right;
+  display: flex;
+  align-items: center;
+} */
 
 #shopName {
   background-color: white;
@@ -24,14 +31,19 @@ body {
   justify-content: center;
   align-items: center;
   margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 26px;
+  font-weight: 500;
 }
 
 #logoImage {
-  width: 70px;
+  width: 90px;
 }
 
-.btnHeader {
+.btnHeaderLeft {
   background-color: rgb(229, 236, 248);
+  width: 200px;
   color: black;
   padding: 6px;
   font-size: 16px;
@@ -39,9 +51,22 @@ body {
   margin-left: 20px;
 }
 
+.btnHeaderRight{
+  background-color: rgb(229, 236, 248);
+  width: 200px;
+  color: black;
+  padding: 6px;
+  font-size: 16px;
+  border: none;
+  margin-right: 20px;
+}
+
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: flex;
+  /* height: 70px; */
+  padding: 17px;
+  /* border: 1px solid black; */
 }
 
 .dropdown-content {

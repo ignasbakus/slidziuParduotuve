@@ -28,7 +28,7 @@ include_once "../components/header.php"
     <title>Document</title>
 </head>
 
-<body class="mainBody">
+<body>
     <div class="container1">
         <div class="row">
             <div class="col-1"></div>

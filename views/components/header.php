@@ -19,26 +19,40 @@ session_start();
 </head>
 
 <body>
-    <div class="header">
+    <div class="headerMain">
         <div class="row">
-            <div class="col header">
+            <div class="col-2 headerMenu">
                 <div class="logoAndImage">
-                    <h2 id="shopName">
+                    <a id="shopName" href="../categories/index.php">
                         Ski Shop
                         <img id="logoImage" src="../../images/b9a9bce831a3d22332cd90232f73af0c.jpg" alt="">
-                    </h2>
+                    </a>
                 </div>
-                <div class="dropdown">
-                    <button class="btnHeader">Kategorijos</button>
-                    <div class="dropdown-content">
-                        <?php foreach ($categories as $key => $category) { ?>
-                            <a href="./show.php?id=<?= $category->id ?>"><?= $category->name ?></a>
-                        <?php } ?>
-                    </div>
+            </div>
+            <div class="col-1 dropdown">
+                <button class="btnHeaderLeft">Kategorijos</button>
+                <div class="dropdown-content">
+                    <?php foreach ($categories as $key => $category) { ?>
+                        <a href="./show.php?id=<?= $category->id ?>"><?= $category->name ?></a>
+                    <?php } ?>
                 </div>
-                <div class="pageMenu ">
-                    <button class="btnHeader">Apie mus</button>
-                </div>
+            </div>
+            <div class="col-1 headerMenu">
+                <button class="btnHeaderLeft">Apie mus</button>
+            </div>
+            <div class="col-1 headerMenu">
+                <button class="btnHeaderLeft">Aksesuarai</button>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1 headerMenu">
+                <button class="btnHeaderRight">Krepšelis</button>
+            </div>
+            <div class="col-1 headerMenu">
+                <button class="btnHeaderRight">Prisijungti</button>
             </div>
         </div>
     </div>

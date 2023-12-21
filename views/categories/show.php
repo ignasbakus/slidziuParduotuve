@@ -26,7 +26,7 @@ include_once "../components/header.php"
     <title>Document</title>
 </head>
 
-<body class="bg-transparent">
+<body class="">
     <h1>Kategorija</h1>
     <h2>Kategorijos id yra <?= $_GET['id'] ?></h2>
     <div class="categoryCard">
