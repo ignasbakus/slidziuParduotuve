@@ -2,25 +2,50 @@ body {
   background-color: rgb(229, 236, 248);
 }
 
+.logoAndImage{
+  width: 230px;
+}
+
 .headerMain {
   background-color: white;
   border-bottom: 1px solid black;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  /* justify-content: space-between; */
   
 }
 
-.headerMenu{
-  display: inline-block;
+.headerMenuLeft,
+.headerMenuRight  {
+  /* display: inline-block; */
   display: flex;
   align-items: center;
+  width: auto;
   /* border: 1px solid black; */
-  height: 70px;
+  /* height: 70px; */
 }
-/* 
-.headerMenuRight{
-  float: right;
-  display: flex;
-  align-items: center;
+
+/* .headerMenuRight:not(:first-child){
+  margin-left: 5px;
 } */
+
+.headerMenuLeft{
+  margin-right: 10px;
+}
+
+.headerMenuLeftButtons{
+  margin-right: 10px;
+}
+
+.headerMenuRightButtons{
+margin-right: 10px;
+}
+
+.headerMenuRight{
+  /* float: right; */
+  margin-left: auto;
+}
 
 #shopName {
   background-color: white;
@@ -41,39 +66,35 @@ body {
   width: 90px;
 }
 
-.btnHeaderLeft {
-  background-color: rgb(229, 236, 248);
-  width: 200px;
-  color: black;
-  padding: 6px;
-  font-size: 16px;
-  border: none;
-  margin-left: 20px;
-}
+/* .btnHeaderRight {
+  margin-left: auto;
+} */
 
-.btnHeaderRight{
+.btnHeaderRight,
+.btnHeaderLeft {
+  width: 100px;
   background-color: rgb(229, 236, 248);
-  width: 200px;
   color: black;
   padding: 6px;
   font-size: 16px;
   border: none;
-  margin-right: 20px;
 }
 
 .dropdown {
   position: relative;
   display: flex;
-  /* height: 70px; */
-  padding: 17px;
-  /* border: 1px solid black; */
+  align-items: center;
+  height: 20px;
 }
+
 
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%; /* Position the dropdown below the button */
+  left: 0;
   background-color: #f1f1f1;
-  min-width: 160px;
+  width: 100%; /* Make the dropdown full width */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }

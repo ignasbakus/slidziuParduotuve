@@ -20,16 +20,14 @@ session_start();
 
 <body>
     <div class="headerMain">
-        <div class="row">
-            <div class="col-2 headerMenu">
-                <div class="logoAndImage">
-                    <a id="shopName" href="../categories/index.php">
-                        Ski Shop
-                        <img id="logoImage" src="../../images/b9a9bce831a3d22332cd90232f73af0c.jpg" alt="">
-                    </a>
-                </div>
+        <div class="headerMenuLeft">
+            <div class="logoAndImage">
+                <a id="shopName" href="../categories/index.php">
+                    Ski Shop
+                    <img id="logoImage" src="../../images/b9a9bce831a3d22332cd90232f73af0c.jpg" alt="">
+                </a>
             </div>
-            <div class="col-1 dropdown">
+            <div class="dropdown headerMenuLeftButtons">
                 <button class="btnHeaderLeft">Kategorijos</button>
                 <div class="dropdown-content">
                     <?php foreach ($categories as $key => $category) { ?>
@@ -37,22 +35,19 @@ session_start();
                     <?php } ?>
                 </div>
             </div>
-            <div class="col-1 headerMenu">
+            <div class="headerMenuLeftButtons">
                 <button class="btnHeaderLeft">Apie mus</button>
             </div>
-            <div class="col-1 headerMenu">
+            <div class="headerMenuLeftButtons">
                 <button class="btnHeaderLeft">Aksesuarai</button>
             </div>
-            <div class="col-1"></div>
-            <div class="col-1"></div>
-            <div class="col-1"></div>
-            <div class="col-1"></div>
-            <div class="col-1"></div>
-            <div class="col-1 headerMenu">
+        </div>
+        <div class="headerMenuRight">
+            <div class="headerMenuRightButtons">
                 <button class="btnHeaderRight">Krepšelis</button>
             </div>
-            <div class="col-1 headerMenu">
-                <button class="btnHeaderRight">Prisijungti</button>
+            <div class="headerMenuRightButtons">
+                <button  class="btnHeaderRight">Prisijungti</button>
             </div>
         </div>
     </div>
