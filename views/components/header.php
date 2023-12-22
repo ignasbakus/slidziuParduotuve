@@ -27,14 +27,14 @@ session_start();
                     <img id="logoImage" src="../../images/b9a9bce831a3d22332cd90232f73af0c.jpg" alt="">
                 </a>
             </div>
-            <div class="dropdown headerMenuLeftButtons">
-                <button class="btnHeaderLeft">Kategorijos</button>
+            <form action="../categories/index.php" class="dropdown headerMenuLeftButtons">
+                <button type="submit"  class="btnHeaderLeft">Kategorijos</button>
                 <div class="dropdown-content">
                     <?php foreach ($categories as $key => $category) { ?>
                         <a href="./show.php?id=<?= $category->id ?>"><?= $category->name ?></a>
                     <?php } ?>
                 </div>
-            </div>
+            </form>
             <div class="headerMenuLeftButtons">
                 <button class="btnHeaderLeft">Apie mus</button>
             </div>
