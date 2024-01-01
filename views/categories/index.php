@@ -45,8 +45,8 @@ include_once "../components/header.php"
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
-                <form class="buttons" action="./create.php" method="get">
-                    <button class="buttonCreate btnAll" type="submit">Sukurti</button>
+                <form class="buttonAboveMainBody" action="./create.php" method="get">
+                    <button id="buttonCreate" class="btnAll" type="submit">Sukurti</button>
                 </form>
             </div>
             <div class="col-1"></div>
@@ -54,32 +54,32 @@ include_once "../components/header.php"
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
-                <?php foreach ($categories as $key => $category) { ?>
-                    <div class="row mainBodyRow">
-                        <div class="col-5 nameAndDescription">
-                            <h2 class='skiTypeName'><?= $category->name ?></h2>
-                            <!-- <p class='skiTypeDescription'><?= $category->description ?></p> -->
+                <div class="row mainBodyRow">
+                    <?php foreach ($categories as $key => $category) { ?>
+                        <div class="col-4 d-flex justify-content-center mt-3">
+                            <div class="card" style="width: 18rem;">
+                                <img src="<?= $category->photo ?>" class="card-img-top skiImages" alt="...">
+                                <div class="card-body">
+                                    <h3 class="card-title"><?= $category->name ?></h3>
+                                    <div class="buttonsCol">
+                                        <form action="./show.php?id=<?= $category->id ?>" method="post">
+                                            <button class="btn1 btnAll" type="submit">Rodyti</button>
+                                        </form>
+                                        <form action="./edit.php" method="get">
+                                            <input type="hidden" name="id" value="<?= $category->id ?>">
+                                            <button class="btn2 btnAll" type="submit">Taisyti</button>
+                                        </form>
+                                        <form action="./index.php" method="post">
+                                            <input type="hidden" name="id" value="<?= $category->id ?>">
+                                            <button class="btn3 btnAll" type="submit">Ištrinti</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-5 ">
-                            <img class="skiImages" src="<?= $category->photo ?>" alt="">
-                        </div>
-                        <div class="col-2 buttons borderButtonsCol">
-                            <form action="./show.php?id=<?= $category->id ?>" method="post">
-                                <button class="btn1 btnAll" type="submit">Rodyti</button>
-                            </form>
-                            <form action="./edit.php" method="get">
-                                <input type="hidden" name="id" value="<?= $category->id ?>">
-                                <button class="btn2 btnAll" type="submit">Taisyti</button>
-                            </form>
-                            <form action="./index.php" method="post">
-                                <input type="hidden" name="id" value="<?= $category->id ?>">
-                                <button class="btn3 btnAll" type="submit">Ištrinti</button>
-                            </form>
-                        </div>
-                    </div>
-                <?php } ?>
+                    <?php } ?>
+                </div>
             </div>
-            <div class="col-1"></div>
         </div>
     </div>
 </body>

@@ -118,14 +118,28 @@ body {
 
 .heading {
   text-align: center;
-  border-bottom: 5px groove rgb(133, 196, 227);
+  border-bottom: 5px solid rgb(133, 196, 227);
   margin-top: 20px;
   height: 100%;
 }
 
-/* .nameAndDescription{
-border: 1px solid black;
-} */
+.nameAndDescription{
+  height: 500px;
+  text-align: center;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  margin-right: 100px;
+}
+
+.nameAndDescription:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container2{
+  padding: 2px 16px;
+}
 
 .skiTypeName {
   text-align: center;
@@ -135,28 +149,36 @@ border: 1px solid black;
   margin: 15%;
 }
 
-/* .nameAndDescription {
-  height: 150px;
-  width: 400px;
-  margin-bottom: 10px;
-} */
-
 #coverPhoto {
   width: 100%;
-  height: 370px;
+  height: 37x0px;
 }
+
 
 .btnAll {
   width: 150px;
-  margin: 5px;
   color: black;
   font-weight: 700;
-  margin: 7px;
 }
 
-.buttonCreate {
+
+
+/* .btnAll > * :not(:last-child){
+  margin-bottom: 10px;
+} */
+
+#buttonCreate {
   margin: 30px;
   border-radius: 12px;
+}
+
+.imageMainBody{
+  height: 300px;
+  /* margin-top: 30px; */
+}
+
+.nameMainBody{
+  margin-top: 40px;
 }
 
 .btn1 {
@@ -177,7 +199,7 @@ border: 1px solid black;
   border-radius: 12px;
 }
 
-.buttons {
+.buttonAboveMainBody {
   text-align: center;
 }
 
@@ -186,11 +208,14 @@ border: 1px solid black;
 }
 
 .skiImages {
-  float: left;
+  /* float: left; */
   width: 100%;
-  max-height: 200px;
+  min-height: 18    0px;
   padding-top: 10px;
   padding-bottom: 10px;
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
+  /* transform: rotate(270deg); */
   /* border-radius: 12px; */
   /* height: 100px; */
   /* object-fit: cover; */
@@ -199,10 +224,13 @@ border: 1px solid black;
   /* margin-bottom: 10px; */
 }
 
-.borderButtonsCol {
-  border-left: 2px solid rgb(133, 196, 227);
-}
+/* .buttonsCol {
+  text-align: center;
+} */
 
 .mainBodyRow {
-  border-bottom: 2px solid rgb(133, 196, 227);
+  /* border-bottom: 2px solid rgb(133, 196, 227); */
+
 }
+
+
