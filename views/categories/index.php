@@ -8,8 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $categories = CategoryController::getAll();
 
-include_once "../components/header.php"
-
+include_once "../components/header.php";
 ?>
 
 
@@ -46,7 +45,7 @@ include_once "../components/header.php"
             <div class="col-1"></div>
             <div class="col-10">
                 <form class="buttonAboveMainBody" action="./create.php" method="get">
-                    <button id="buttonCreate" class="btnAll" type="submit">Sukurti</button>
+                    <button id="buttonCreate" class="btnAll" type="submit">Sukurti naują kategoriją</button>
                 </form>
             </div>
             <div class="col-1"></div>
@@ -56,10 +55,10 @@ include_once "../components/header.php"
             <div class="col-10">
                 <div class="row mainBodyRow">
                     <?php foreach ($categories as $key => $category) { ?>
-                        <div class="col-4 d-flex justify-content-center mt-3">
-                            <div class="card" style="width: 18rem;">
+                        <div class="col-3 d-flex justify-content-center mt-3">
+                            <div class="card border-info border-2" style="width: 18rem;">
                                 <img src="<?= $category->photo ?>" class="card-img-top skiImages" alt="...">
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column text-bg-light ">
                                     <h3 class="card-title"><?= $category->name ?></h3>
                                     <div class="buttonsCol">
                                         <form action="./show.php?id=<?= $category->id ?>" method="post">
@@ -84,5 +83,8 @@ include_once "../components/header.php"
     </div>
 </body>
 
+<?php 
+include_once "../components/footer.php";
+?>
 
 </html>

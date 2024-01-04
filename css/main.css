@@ -123,21 +123,21 @@ body {
   height: 100%;
 }
 
-.nameAndDescription{
+.nameAndDescription {
   height: 500px;
   text-align: center;
   border: 1px solid black;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 40%;
   margin-right: 100px;
 }
 
-.nameAndDescription:hover{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.nameAndDescription:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.container2{
+.container2 {
   padding: 2px 16px;
 }
 
@@ -154,14 +154,11 @@ body {
   height: 37x0px;
 }
 
-
 .btnAll {
   width: 150px;
   color: black;
   font-weight: 700;
 }
-
-
 
 /* .btnAll > * :not(:last-child){
   margin-bottom: 10px;
@@ -172,31 +169,33 @@ body {
   border-radius: 12px;
 }
 
-.imageMainBody{
+.imageMainBody {
   height: 300px;
   /* margin-top: 30px; */
 }
 
-.nameMainBody{
+.nameMainBody {
   margin-top: 40px;
 }
 
 .btn1 {
-  background-color: transparent;
-  border: 2px solid blue;
-  border-radius: 12px;
+  background-color: rgb(229, 236, 248);
+  border: 2px solid rgb(133, 196, 227);
+  border-radius: 8px;
 }
 
 .btn2 {
-  background-color: transparent;
-  border: 2px solid green;
-  border-radius: 12px;
+  background-color: rgb(229, 236, 248);
+  border: 2px solid rgb(86, 155, 86);
+  border-radius: 8px;
+  margin-top: 5px;
 }
 
 .btn3 {
-  background-color: transparent;
-  border: 2px solid red;
-  border-radius: 12px;
+  background-color: rgb(229, 236, 248);
+  border: 2px solid rgb(224, 77, 77);
+  border-radius: 8px;
+  margin-top: 5px;
 }
 
 .buttonAboveMainBody {
@@ -210,9 +209,11 @@ body {
 .skiImages {
   /* float: left; */
   width: 100%;
-  min-height: 18    0px;
+  height: 180px;
   padding-top: 10px;
   padding-bottom: 10px;
+
+  /* border: 1px solid black; */
   /* padding-top: 10px; */
   /* padding-bottom: 10px; */
   /* transform: rotate(270deg); */
@@ -224,13 +225,49 @@ body {
   /* margin-bottom: 10px; */
 }
 
-/* .buttonsCol {
-  text-align: center;
-} */
-
-.mainBodyRow {
-  /* border-bottom: 2px solid rgb(133, 196, 227); */
-
+.buttonsCol {
+  margin-top: auto;
 }
 
+.card {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  /* padding: 14px 80px 18px 36px; */
+  cursor: pointer;
+}
 
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.footerMain{
+  background-color: white;
+  border-bottom: 1px solid black;
+  display: flex;
+  width: 100%;
+  height: 150px;
+  margin-top: 50px;
+}
+
+.contactInfo{
+  margin-left: 20px;
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contactInfo > a{
+  float: left;
+  color: black;
+}
+
+.footerMenuLeft{
+  line-height: 150px;
+  height: 150px;
+  text-align: center;
+}
