@@ -26,21 +26,19 @@ include_once "../components/header.php"
     <title>Document</title>
 </head>
 
-<body class="">
-    <h1>Kategorija</h1>
-    <h2>Kategorijos id yra <?= $_GET['id'] ?></h2>
-    <div class="categoryCard">
-        <img src="../../images/photo-1551524559-8af4e6624178.avif" class="categoryCardImage" alt="">
-        <div class="categoryCardBody">
+<body>
+    <div class="row">
+        <div class="col">
             <h3 class="categoryCardTitle"><?= $category->name ?></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
             <p class="categoryCardDescription"><?= $category->description ?></p>
         </div>
-        <div class="CategoryItems">
-            <a class="CategoryItem" href="">Slides pirmos</a>
-            <a class="CategoryItem" href="">Slides antros</a>
-            <a class="CategoryItem" href="">Slides trecios</a>
-        </div>
-        <div>
+    </div>
+    <div class="row">
+        <div class="col">
             <a href="./index.php">Rodyti visas slidžių kategorijas</a>
         </div>
     </div>
