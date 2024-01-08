@@ -3,8 +3,8 @@ if (!isset($_GET["id"])) {
     header("location: ./index.php");
 }
 
-include "../../controllers/CategoryController.php";
-$category = CategoryController::find($_GET["id"]);
+include "../../controllers/ItemController.php";
+$item = ItemController::find($_GET["id"]);
 
 include_once "../components/header.php"
 
@@ -29,17 +29,27 @@ include_once "../components/header.php"
 <body>
     <div class="row">
         <div class="col">
-            <h3 class="categoryCardTitle"><?= $category->name ?></h3>
+            <img src="<?= $item->photo ?>" alt="">
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <p class="categoryCardDescription"><?= $category->description ?></p>
+            <h2><?= $item->title ?></h2>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <a href="./index.php">Rodyti visas slidžių kategorijas</a>
+            <h3><?= $item->price ?>€</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p><?= $item->description ?></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="./index.php">Rodyti visas slides</a>
         </div>
     </div>
 </body>

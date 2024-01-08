@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="text" class="createCategoryInputs" name="name" placeholder="Įveskite kategorijos pavadinimą">
                 </div>
                 <div class="createInputs">
-                    <label for="description">Kategorijos aprašymas (rodomas jau paspaudus ant kategorijos): </label>
+                    <label for="description">Kategorijos aprašymas: </label>
                     <input type="text" class="createCategoryInputs" name="description" placeholder="Įveskite kategorijos aprašymą">
                 </div>
                 <div class="createInputs">
