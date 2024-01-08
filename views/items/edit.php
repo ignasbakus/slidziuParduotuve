@@ -33,7 +33,7 @@ $item = ItemController::find($_GET["id"]);
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <form action="./create.php" method="post">
+            <form action="./edit.php" method="post">
                 <div class="createInputs">
                     <label for="title">Daikto pavadinimas: </label>
                     <input type="text" class="createCategoryInputs" name="title" placeholder="Įveskite daikto pavadinimą" value="<?= $item->title ?>">
@@ -63,6 +63,7 @@ $item = ItemController::find($_GET["id"]);
                     <p>Jei norite, <a href="../categories/create.php">čia</a> galite susikurti naują kategoriją</p>
                 </div>
                 <div class="createInputs">
+                    <input type="hidden" name="id" value="<?= $item->id ?>">
                     <button type="submit" name="">Pateikti</button>
                 </div>
             </form>
