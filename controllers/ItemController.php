@@ -1,41 +1,46 @@
 <?php
 // include authors
-include "../../models/Category.php";
-class CategoryController
+include "../../models/Item.php";
+class ItemController
 {
 
     public static function getAll()
     {
-        $categories = Category::all();
-        return $categories;
+        $items = Item::all();
+        return $items;
     }
 
     public static function find($id)
     {
-        $category = Category::find($id);
-        return $category;
+        $item = Item::find($id);
+        return $item;
     }
 
     public static function store()
     {
-        $category = new Category();
-        $category->name = $_POST['name'];
-        $category->description = $_POST['description'];
-        $category->photo = $_POST['photo'];
-        // print_r($category);die;
-        $category->save();
+        $item = new Item();
+        $item->title = $_POST['title'];
+        $item->price = $_POST['price'];
+        $item->description = $_POST['description'];
+        $item->photo = $_POST['photo'];
+        $item->category_id = $_POST['category_id'];
+        // print_r($item);die;
+        $item->save();
     }
 
     public static function update($id)
     {
-        $category = Category::find($id);
-        $category->name = $_POST['name'];
-        $category->description = $_POST['description'];
-        $category->photo = $_POST['photo'];
-        $category->update();
+        $item = Item::find($id);
+        $item->title = $_POST['title'];
+        $item->price = $_POST['price'];
+        $item->description = $_POST['description'];
+        $item->photo = $_POST['photo'];
+        $item->category_id = $_POST['category_id'];
+        $item->update();
     }
 
-    public static function destroy($id) {
-        Category::destroy($id);
+    public static function destroy($id)
+    {
+        Item::destroy($id);
     }
 }

@@ -1,12 +1,12 @@
 <?php
-// include categoriescontroller
-include "../../controllers/CategoryController.php";
+// include itemscontroller
+include "../../controllers/ItemController.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    CategoryController::destroy($_POST['id']);
+    ItemController::destroy($_POST['id']);
     header("location: ./index.php");
 }
 
-$categories = CategoryController::getAll();
+$items = ItemController::getAll();
 
 include_once "../components/header.php";
 ?>
@@ -37,7 +37,7 @@ include_once "../components/header.php";
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10 heading">
-                <h1 id="skiTypes">Slidžių tipai</h1>
+                <h1 id="skiTypes">Visos slidės</h1>
             </div>
             <div class="col-1"></div>
         </div>
@@ -45,12 +45,12 @@ include_once "../components/header.php";
             <div class="col-1"></div>
             <div class="col-5">
                 <form class="buttonAboveMainBody" action="./create.php" method="get">
-                    <button id="leftButtonAboveMainBody" class="btnAll btnUpper" type="submit">Sukurti naują kategoriją</button>
+                    <button id="leftButtonAboveMainBody" class="btnAll btnUpper" type="submit">Sukurti naują daiktą</button>
                 </form>
             </div>
             <div class="col-5">
-                <form class="buttonAboveMainBody" action="../items/index.php" method="get">
-                    <button id="rightButtonAboveMainBody" class="btnAll btnUpper" type="submit">Visos slidės</button>
+                <form class="buttonAboveMainBody" action="../categories/index.php" method="get">
+                    <button id="rightButtonAboveMainBody" class="btnAll btnUpper" type="submit">Grįšti į kategorijas</button>
                 </form>
             </div>
             <div class="col-1"></div>
@@ -59,22 +59,24 @@ include_once "../components/header.php";
             <div class="col-1"></div>
             <div class="col-10">
                 <div class="row mainBodyRow">
-                    <?php foreach ($categories as $key => $category) { ?>
+                    <?php foreach ($items as $key => $item) { ?>
                         <div class="col-3 d-flex justify-content-center mt-3">
                             <div class="card border-info border-2" style="width: 18rem;">
-                                <img src="<?= $category->photo ?>" class="card-img-top skiImages" alt="...">
+                                <img src="<?= $item->photo ?>" class="card-img-top skiImages" alt="...">
                                 <div class="card-body d-flex flex-column text-bg-light ">
-                                    <h3 class="card-title"><?= $category->name ?></h3>
+                                    <h2 class="card-title"><?= $item->title ?></h2>
+                                    <h3 class="card-title"><?= $item->price ?>€</h3>
+                                    <p class="card-text"><?= $item->description ?></p>
                                     <div class="buttonsCol">
-                                        <form action="./show.php?id=<?= $category->id ?>" method="post">
+                                        <form action="./show.php?id=<?= $item->id ?>" method="post">
                                             <button class="btn1 btnAll" type="submit">Rodyti</button>
                                         </form>
                                         <form action="./edit.php" method="get">
-                                            <input type="hidden" name="id" value="<?= $category->id ?>">
+                                            <input type="hidden" name="id" value="<?= $item->id ?>">
                                             <button class="btn2 btnAll" type="submit">Taisyti</button>
                                         </form>
                                         <form action="./index.php" method="post">
-                                            <input type="hidden" name="id" value="<?= $category->id ?>">
+                                            <input type="hidden" name="id" value="<?= $item->id ?>">
                                             <button class="btn3 btnAll" type="submit">Ištrinti</button>
                                         </form>
                                     </div>
