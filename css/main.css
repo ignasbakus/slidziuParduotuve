@@ -278,3 +278,34 @@ body{
   height: 150px;
   text-align: center;
 }
+
+#itemImages{
+  height: 430px;
+}
+
+/* .mainBodyRow{
+  height: 200px;
+} */
+
+/* .itemCardTitle {
+  height: 50px;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
+
+#itemLink{
+  text-decoration: none;
+}
+
+
+.itemCardTitle{
+  min-height: 160px;
+}
+
+.itemCardDescription{
+  height: 50px; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

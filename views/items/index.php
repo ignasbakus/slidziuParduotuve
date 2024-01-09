@@ -61,26 +61,28 @@ include_once "../components/header.php";
                 <div class="row mainBodyRow">
                     <?php foreach ($items as $key => $item) { ?>
                         <div class="col-3 d-flex justify-content-center mt-3">
-                            <div class="card border-info border-2" style="width: 18rem;">
-                                <img src="<?= $item->photo ?>" class="card-img-top skiImages" alt="...">
-                                <div class="card-body d-flex flex-column text-bg-light ">
-                                    <h2 class="card-title"><?= $item->title ?></h2>
-                                    <h3 class="card-title"><?= $item->price ?>€</h3>
-                                    <p class="card-text"><?= $item->description ?></p>
-                                    <div class="buttonsCol">
-                                        <form action="./show.php?id=<?= $item->id ?>" method="post">
-                                            <button class="btn1 btnAll" type="submit">Rodyti</button>
-                                        </form>
-                                        <form action="./edit.php" method="get">
-                                            <input type="hidden" name="id" value="<?= $item->id ?>">
-                                            <button class="btn2 btnAll" type="submit">Taisyti</button>
-                                        </form>
-                                        <form action="./index.php" method="post">
-                                            <input type="hidden" name="id" value="<?= $item->id ?>">
-                                            <button class="btn3 btnAll" type="submit">Ištrinti</button>
-                                        </form>
+                            <div class="card border-info border-2" style="width: 26rem;">
+                                <a id="itemLink" href="./show.php?id=<?= $item->id ?>">
+                                    <img src="<?= $item->photo ?>" id="itemImages" class="card-img-top itemImages" alt="...">
+                                    <div class="card-body cardBodyItem d-flex flex-column text-bg-light ">
+                                        <h2 class="card-title itemCardTitle"><?= $item->title ?></h2>
+                                        <h3 class="card-title"><?= $item->price ?>€</h3>
+                                        <p class="card-text itemCardDescription"><?= $item->description ?></p>
+                                        <div class="buttonsCol">
+                                            <form action="./show.php?id=<?= $item->id ?>" method="post">
+                                                <button class="btn1 btnAll" type="submit">Rodyti</button>
+                                            </form>
+                                            <form action="./edit.php" method="get">
+                                                <input type="hidden" name="id" value="<?= $item->id ?>">
+                                                <button class="btn2 btnAll" type="submit">Taisyti</button>
+                                            </form>
+                                            <form action="./index.php" method="post">
+                                                <input type="hidden" name="id" value="<?= $item->id ?>">
+                                                <button class="btn3 btnAll" type="submit">Ištrinti</button>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     <?php } ?>
