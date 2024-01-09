@@ -309,3 +309,11 @@ body{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+#showItem{
+  width: 350px;
+}
+
+.itemShowContainer{
+  margin-top: 20px;
+}

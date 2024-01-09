@@ -27,29 +27,23 @@ include_once "../components/header.php"
 </head>
 
 <body>
-    <div class="row">
-        <div class="col">
-            <img src="<?= $item->photo ?>" alt="">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h2><?= $item->title ?></h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h3><?= $item->price ?>€</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <p><?= $item->description ?></p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <a href="./index.php">Rodyti visas slides</a>
+    <div class="itemShowContainer">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-4">
+                        <img id="showItem" src="<?= $item->photo ?>" alt="">
+                    </div>
+                    <div class="col-8 itemShowRightSide">
+                        <h2><?= $item->title ?></h2>
+                        <h3><?= $item->price ?>€</h3>
+                        <p><?= $item->description ?></p>
+                        <a href="./index.php">Rodyti visas slides</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
         </div>
     </div>
 </body>
