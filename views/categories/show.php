@@ -4,7 +4,11 @@ if (!isset($_GET["id"])) {
 }
 
 include "../../controllers/CategoryController.php";
-$category = CategoryController::find($_GET["id"]);
+include "../../controllers/ItemController.php";
+
+$categories = CategoryController::getAll();
+$categoryShow = CategoryController::find($_GET["id"]);
+$items = ItemController::getAll();
 
 include_once "../components/header.php"
 
@@ -27,19 +31,52 @@ include_once "../components/header.php"
 </head>
 
 <body>
-    <div class="row">
-        <div class="col">
-            <h3 class="categoryCardTitle"><?= $category->name ?></h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <p class="categoryCardDescription"><?= $category->description ?></p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <a href="./index.php">Rodyti visas slidžių kategorijas</a>
+    <div class="categoriesShowContainer">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10 ">
+                <div class="row">
+                    <div class="col">
+                        <img id="categoryShowImage" src="../../images/k2_2324_clp-banner_ski_all-mountain-skis.jpg" alt="">
+                        <h1 class="categoryCardTitle categoriesShowName"><?= $categoryShow->name ?></h1>
+                        <p class="categoryCardDescription"><?= $categoryShow->description ?></p>
+                    </div>
+                    <div class="row">
+                        <?php
+                        foreach ($items as  $item) {
+                            if ($item->category_id == $categoryShow->id) { ?>
+                                <div class="col-3 d-flex justify-content-center mt-3">
+                                    <div class="card border-info border-2" style="width: 26rem;">
+                                        <a id="itemLink" href="./show.php?id=<?= $item->id ?>">
+                                            <img src="<?= $item->photo ?>" id="itemImages" class="card-img-top itemImages" alt="...">
+                                            <div class="card-body cardBodyItem d-flex flex-column text-bg-light ">
+                                                <h2 class="card-title itemCardTitle"><?= $item->title ?></h2>
+                                                <h3 class="card-title"><?= $item->price ?>€</h3>
+                                                <p class="card-text itemCardDescription"><?= $item->description ?></p>
+                                                <div class="buttonsCol">
+                                                    <form action="../items/show.php?id=<?= $item->id ?>" method="post">
+                                                        <button class="btn1 btnAll" type="submit">Rodyti</button>
+                                                    </form>
+                                                    <form action="../items/edit.php" method="get">
+                                                        <input type="hidden" name="id" value="<?= $item->id ?>">
+                                                        <button class="btn2 btnAll" type="submit">Taisyti</button>
+                                                    </form>
+                                                    <form action="./show.php" method="post">
+                                                        <input type="hidden" name="id" value="<?= $item->id ?>">
+                                                        <button class="btn3 btnAll" type="submit">Ištrinti</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                        <?php  }
+                        } ?>
+                    </div>
+                    <!-- <a href="./index.php">Rodyti visas slidžių kategorijas</a> -->
+                </div>
+            </div>
+            <div class="col-1"></div>
         </div>
     </div>
 </body>

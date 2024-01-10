@@ -4,6 +4,7 @@ if (!isset($_GET["id"])) {
 }
 
 include "../../controllers/ItemController.php";
+include "../../controllers/CategoryController.php";
 $item = ItemController::find($_GET["id"]);
 
 include_once "../components/header.php"
@@ -40,6 +41,8 @@ include_once "../components/header.php"
                         <h3><?= $item->price ?>€</h3>
                         <p><?= $item->description ?></p>
                         <a href="./index.php">Rodyti visas slides</a>
+                        <br>
+                        <a href="../categories/show.php?id=<?= $item->category_id ?>">Į slidžių kategorija</a>
                     </div>
                 </div>
             </div>

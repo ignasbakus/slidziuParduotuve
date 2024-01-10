@@ -317,3 +317,13 @@ body{
 .itemShowContainer{
   margin-top: 20px;
 }
+
+#categoryShowImage{
+  width: 100%;
+}
+
+.categoriesShowName{
+  margin: 20px 0px 20px 0px;
+  text-align: center;
+}
+
