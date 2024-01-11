@@ -6,6 +6,7 @@ if (!isset($_GET["id"])) {
 include "../../controllers/ItemController.php";
 include "../../controllers/CategoryController.php";
 $item = ItemController::find($_GET["id"]);
+$categories = CategoryController::getAll();
 
 include_once "../components/header.php"
 

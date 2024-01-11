@@ -27,7 +27,7 @@
                 <button type="submit"  class="btnHeaderLeft">Kategorijos</button>
                 <div class="dropdown-content">
                     <?php foreach ($categories as $key => $category) { ?>
-                        <a href="./show.php?id=<?= $category->id ?>"><?= $category->name ?></a>
+                        <a href="../categories/show.php?id=<?= $category->id ?>"><?= $category->name ?></a>
                     <?php } ?>
                 </div>
             </form>

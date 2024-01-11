@@ -1,5 +1,6 @@
 <?php
 // include itemscontroller
+include "../../controllers/CategoryController.php";
 include "../../controllers/ItemController.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ItemController::destroy($_POST['id']);
@@ -7,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $items = ItemController::getAll();
+$categories = CategoryController::getAll();
 
 include_once "../components/header.php";
 ?>
