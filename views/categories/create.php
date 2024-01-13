@@ -1,15 +1,17 @@
 <?php
 
+include_once "../components/header.php";
+
 include "../../controllers/CategoryController.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     CategoryController::store();
+    $_SESSION['success'] = 'Kategorija sėkmingai sukurta';
     header("location: ./index.php");
+    die;
 }
 
 $categories = CategoryController::getAll();
-
-include_once "../components/header.php";
 
 ?>
 

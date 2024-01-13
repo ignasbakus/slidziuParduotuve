@@ -50,6 +50,7 @@ class Category
         $stmt = $db->prepare($sql);
         $stmt->bind_param("sss",$this->name, $this->description, $this->photo);
         $stmt->execute();
+        // echo $stmt->insert_id;die;
         $db->close();
     }
 

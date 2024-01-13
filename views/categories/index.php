@@ -1,5 +1,5 @@
 <?php
-// include categoriescontroller
+
 include "../../controllers/CategoryController.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     CategoryController::destroy($_POST['id']);

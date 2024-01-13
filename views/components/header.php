@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +27,7 @@
                 </a>
             </div>
             <form action="../categories/index.php" class="dropdown headerMenuLeftButtons">
-                <button type="submit"  class="btnHeaderLeft">Kategorijos</button>
+                <button type="submit" class="btnHeaderLeft">Kategorijos</button>
                 <div class="dropdown-content">
                     <?php foreach ($categories as $key => $category) { ?>
                         <a href="../categories/show.php?id=<?= $category->id ?>"><?= $category->name ?></a>
@@ -43,10 +46,17 @@
                 <button class="btnHeaderRight">Krepšelis</button>
             </div>
             <div class="headerMenuRightButtons">
-                <button  class="btnHeaderRight">Prisijungti</button>
+                <button class="btnHeaderRight">Prisijungti</button>
             </div>
         </div>
     </div>
+    <?php if (isset($_SESSION['success'])) { ?>
+            <div class="alert alert-success text-center" role="alert">
+                Kategorija sėkmingai sukurta!
+            </div>
+        <?php }
+        unset($_SESSION['success']);
+        ?>
 </body>
 
 </html>
