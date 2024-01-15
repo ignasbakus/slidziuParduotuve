@@ -51,12 +51,21 @@ session_start();
         </div>
     </div>
     <?php if (isset($_SESSION['success'])) { ?>
-            <div class="alert alert-success text-center" role="alert">
-                Kategorija sėkmingai sukurta!
+        <div class="alert alert-success text-center" role="alert">
+            <?= $_SESSION["success"] ?>
+        </div>
+    <?php }
+    unset($_SESSION['success']);
+    ?>
+    <?php if (isset($_SESSION['alert'])) {
+        foreach ($_SESSION['alert'] as $alert) { ?>
+            <div class="alert alert-danger text-center" role="alert">
+                <?= $alert ?>
             </div>
-        <?php }
-        unset($_SESSION['success']);
-        ?>
+    <?php }
+    }
+    unset($_SESSION['alert']);
+    ?>
 </body>
 
 </html>

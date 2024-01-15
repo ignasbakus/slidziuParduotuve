@@ -1,14 +1,14 @@
 <?php
+include "../components/header.php";
 
 include "../../controllers/CategoryController.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     CategoryController::destroy($_POST['id']);
+    $_SESSION['success'] = 'Kategorija sėkmingai ištrinta!';
     header("location: ./index.php");
 }
-
 $categories = CategoryController::getAll();
 
-include_once "../components/header.php";
 ?>
 
 
@@ -89,7 +89,7 @@ include_once "../components/header.php";
 </body>
 
 <?php
-include_once "../components/footer.php";
+include "../components/footer.php";
 ?>
 
 </html>

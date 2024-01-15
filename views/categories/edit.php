@@ -1,9 +1,12 @@
 <?php
 
+include_once "../components/header.php";
+
 include "../../controllers/CategoryController.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     CategoryController::update($_POST['id']);
+    $_SESSION['success'] = 'Kategorija sėkmingai atnaujinta!';
     header("location: ./index.php");
 }
 
@@ -14,7 +17,6 @@ if (!isset($_GET["id"])) {
 $category = CategoryController::find($_GET["id"]);
 $categories = CategoryController::getAll();
 
-include_once "../components/header.php";
 ?>
 
 <!DOCTYPE html>
