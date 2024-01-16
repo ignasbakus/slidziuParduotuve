@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+include "../../controllers/CategoryController.php";
+
+$categories = CategoryController::getAll();
 ?>
 
 <!DOCTYPE html>

@@ -1,16 +1,15 @@
 <?php
+include_once "../components/header.php";
+
 if (!isset($_GET["id"])) {
     header("location: ./index.php");
 }
 
-include "../../controllers/CategoryController.php";
 include "../../controllers/ItemController.php";
 
 $categories = CategoryController::getAll();
 $categoryShow = CategoryController::find($_GET["id"]);
 $items = ItemController::getAll();
-
-include_once "../components/header.php"
 
 ?>
 

@@ -1,13 +1,14 @@
 <?php
 include "../components/header.php";
 
-include "../../controllers/CategoryController.php";
+// include "../../controllers/CategoryController.php";
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     CategoryController::destroy($_POST['id']);
     $_SESSION['success'] = 'Kategorija sėkmingai ištrinta!';
     header("location: ./index.php");
 }
-$categories = CategoryController::getAll();
+$categories = CategoryController::getAll(); 
 
 ?>
 

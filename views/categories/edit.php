@@ -2,7 +2,6 @@
 
 include_once "../components/header.php";
 
-include "../../controllers/CategoryController.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     CategoryController::update($_POST['id']);

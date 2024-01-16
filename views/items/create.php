@@ -1,7 +1,8 @@
 <?php
+include_once "../components/header.php";
 
 include "../../controllers/ItemController.php";
-include "../../controllers/CategoryController.php";
+// include "../../controllers/CategoryController.php";
 
 $categories = CategoryController::getAll();
 $categories = CategoryController::getAll();
@@ -11,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("location: ./index.php");
 }
 
-include_once "../components/header.php";
 
 ?>
 

@@ -1,8 +1,7 @@
     <?php
 
-    include "../components/header.php";
+    include_once "../components/header.php";
 
-    include "../../controllers/CategoryController.php";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (CategoryController::store()) {
