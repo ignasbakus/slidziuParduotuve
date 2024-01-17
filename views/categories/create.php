@@ -8,7 +8,7 @@
             $_SESSION['success'] = 'Kategorija sėkmingai sukurta!';
             header("location: ./index.php");
         die;
-        } 
+        }
     }
 
     $categories = CategoryController::getAll();
@@ -31,7 +31,7 @@
     </head>
 
     <body>
-        <div class="categoryCreateContainer">
+        <div class="createAndEditContainer">
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-6 backgroundCreateAndEdit">
@@ -39,15 +39,15 @@
                         <h2 class="headingCreateAndEdit">Sukurti naują kategoriją</h2>
                         <div class="createInputs">
                             <label class="labelCreateAndEdit" for="name">Kategorijos pavadinimas: </label><br>
-                            <input type="text" class="createCategoryInputs" name="name" placeholder="Įveskite kategorijos pavadinimą" value="<?= (isset($_POST['name'])) ? $_POST['name'] : "" ?>">
+                            <input type="text" class="editAndCreateInputs" name="name" placeholder="Įveskite kategorijos pavadinimą" value="<?= (isset($_POST['name'])) ? $_POST['name'] : "" ?>">
                         </div>
                         <div class="createInputs">
                             <label class="labelCreateAndEdit" for="description">Kategorijos aprašymas: </label><br>
-                            <input type="text" class="createCategoryInputs" name="description" placeholder="Įveskite kategorijos aprašymą" value="<?= (isset($_POST['description'])) ? $_POST['description'] : "" ?>">
+                            <textarea type="text" class="editAndCreateInputs descriptionInputs" name="description" placeholder="Įveskite kategorijos aprašymą"><?= (isset($_POST['description'])) ? $_POST['description'] : "" ?></textarea>
                         </div>
                         <div class="createInputs">
                             <label class="labelCreateAndEdit" for="photo">Nuotraukos URL: </label><br>
-                            <input type="text" class="createCategoryInputs" name="photo" placeholder="Įveskite nuotraukos URL" value="<?= (isset($_POST['photo'])) ? $_POST['photo'] : "" ?>">
+                            <input type="text" class="editAndCreateInputs" name="photo" placeholder="Įveskite nuotraukos URL" value="<?= (isset($_POST['photo'])) ? $_POST['photo'] : "" ?>">
                         </div>
                         <button class="createAndEditSubmitButton" type="submit" name="">Pateikti</button>
                     </form>

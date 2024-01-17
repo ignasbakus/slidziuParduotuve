@@ -31,44 +31,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
-            <form action="./create.php" method="post">
-                <div class="createInputs">
-                    <label for="title">Daikto pavadinimas: </label>
-                    <input type="text" class="createCategoryInputs" name="title" placeholder="Įveskite daikto pavadinimą">
-                </div>
-                <div class="createInputs">
-                    <label for="price">Kaina: </label>
-                    <input type="text" class="createCategoryInputs" name="price" placeholder="Įveskite daikto kainą €">
-                </div>
-                <div class="createInputs">
-                    <label for="description">Kategorijos aprašymas: </label>
-                    <input type="text" class="createCategoryInputs" name="description" placeholder="Įveskite kategorijos aprašymą">
-                </div>
-                <div class="createInputs">
-                    <label for="photo">Nuotraukos URL: </label>
-                    <input type="text" class="createCategoryInputs" name="photo" placeholder="Įveskite nuotraukos URL">
-                </div>
-                <div class="createInputs">
-                    <label for="category_id">Pasirinkite kategoriją: </label>
-                    <select name="category_id" id="categories">
-                        <?php
-                        foreach ($categories as $category) { ?>
-                            <option value='<?= $category->id ?>'><?= $category->name ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-                <div class="createInputs">
-                    <p>Jei norite, <a href="../categories/create.php">čia</a> galite susikurti naują kategoriją</p>
-                </div>
-                <div class="createInputs">
-                    <button type="submit" name="">Pateikti</button>
-                </div>
-            </form>
+    <div class="createAndEditContainer">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6 backgroundCreateAndEdit">
+                <form action="./create.php" method="post">
+                    <h2 class="headingCreateAndEdit">Sukurti naują prekę</h2>
+                    <div class="createInputs">
+                        <label class="labelCreateAndEdit" for="title">Prekės pavadinimas: </label><br>
+                        <input type="text" class="editAndCreateInputs" name="title" placeholder="Įveskite prekės pavadinimą">
+                    </div>
+                    <div class="createInputs">
+                        <label class="labelCreateAndEdit" for="price">Kaina: </label><br>
+                        <input type="text" class="editAndCreateInputs" name="price" placeholder="Įveskite prekės kainą €">
+                    </div>
+                    <div class="createInputs">
+                        <label class="labelCreateAndEdit" for="description">Prekės aprašymas: </label><br>
+                        <textarea type="text" class="editAndCreateInputs descriptionInputs" name="description" placeholder="Įveskite prekės aprašymą"></textarea>
+                    </div>
+                    <div class="createInputs">
+                        <label class="labelCreateAndEdit" for="photo">Nuotraukos URL: </label><br>
+                        <input type="text" class="editAndCreateInputs" name="photo" placeholder="Įveskite nuotraukos URL">
+                    </div>
+                    <div class="createInputs">
+                        <label class="labelCreateAndEdit" for="category_id">Pasirinkite kategoriją: </label><br>
+                        <select name="category_id" id="categories">
+                            <?php
+                            foreach ($categories as $category) { ?>
+                                <option value='<?= $category->id ?>'><?= $category->name ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="createInputs">
+                        <p>Jei norite, <a href="../categories/create.php">čia</a> galite susikurti naują kategoriją</p>
+                    </div>
+                    <div class="createInputs">
+                        <button class="createAndEditSubmitButton" type="submit" name="">Pateikti</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-3"></div>
         </div>
-        <div class="col-3"></div>
     </div>
 </body>
 

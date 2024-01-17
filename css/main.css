@@ -318,12 +318,17 @@ body {
   text-align: center;
 }
 
-.categoryCreateContainer {
+.createAndEditContainer {
   margin-top: 2%;
 }
 
-.createCategoryInputs {
+.editAndCreateInputs {
   width: 100%;
+}
+
+.descriptionInputs{
+  min-height: 80px;
+  resize: none;
 }
 
 .createAndEditSubmitButton {

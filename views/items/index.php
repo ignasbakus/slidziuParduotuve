@@ -48,7 +48,7 @@ $categories = CategoryController::getAll();
             <div class="col-1"></div>
             <div class="col-5">
                 <form class="buttonAboveMainBody" action="./create.php" method="get">
-                    <button id="leftButtonAboveMainBody" class="btnAll btnUpper" type="submit">Sukurti naują daiktą</button>
+                    <button id="leftButtonAboveMainBody" class="btnAll btnUpper" type="submit">Sukurti naują prekę</button>
                 </form>
             </div>
             <div class="col-5">

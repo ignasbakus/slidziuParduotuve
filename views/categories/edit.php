@@ -20,7 +20,6 @@ if (!isset($_GET["id"])) {
 
 $category = CategoryController::find($_GET["id"]);
 // $categories = CategoryController::getAll();
-
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +38,7 @@ $category = CategoryController::find($_GET["id"]);
 </head>
 
 <body>
-    <div class="categoryEditContainer">
+    <div class="createAndEditContainer">
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6 backgroundCreateAndEdit">
@@ -47,15 +46,15 @@ $category = CategoryController::find($_GET["id"]);
                     <h2 class="headingCreateAndEdit">Pataisyti kategoriją</h2>
                     <div class="editInputs">
                         <label class="labelCreateAndEdit" for="name">Kategorijos pavadinimas: </label><br>
-                        <input type="text" class="createCategoryInputs" name="name" placeholder="Įveskite kategorijos pavadinimą" value="<?= $category->name ?>">
+                        <input type="text" class="editAndCreateInputs" name="name" placeholder="Įveskite kategorijos pavadinimą" value="<?= $category->name ?>">
                     </div>
                     <div class="editInputs">
-                        <label class="labelCreateAndEdit" for="description">Description:</label><br>
-                        <input type="text" class="createCategoryInputs" name="description" placeholder="Įveskite kategorijos aprašymą" value="<?= $category->description ?>">
+                        <label class="labelCreateAndEdit" for="description">Kategorijos aprašymas:</label><br>
+                        <textarea type="text" class="editAndCreateInputs descriptionInputs" name="description" placeholder="Įveskite kategorijos aprašymą"><?= $category->description ?></textarea>
                     </div>
                     <div class="editInputs">
-                        <label class="labelCreateAndEdit" for="photo">Photo:</label><br>
-                        <input type="text" class="createCategoryInputs" name="photo" placeholder="Įveskite nuotraukos URL" value="<?= $category->photo ?>">
+                        <label class="labelCreateAndEdit" for="photo">Nuotraukos URL:</label><br>
+                        <input type="text" class="editAndCreateInputs" name="photo" placeholder="Įveskite nuotraukos URL" value="<?= $category->photo ?>">
                     </div>
                     <input type="hidden" name="id" value="<?= $category->id ?>">
                     <button type="submit" class="createAndEditSubmitButton">Pateikti</button>
