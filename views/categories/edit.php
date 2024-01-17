@@ -4,9 +4,14 @@ include_once "../components/header.php";
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    CategoryController::update($_POST['id']);
-    $_SESSION['success'] = 'Kategorija sėkmingai atnaujinta!';
-    header("location: ./index.php");
+    if (CategoryController::update($_POST['id'])) {
+        $_SESSION['success'] = 'Kategorija sėkmingai atnaujinta!';
+        header("location: ./index.php");
+        die;
+    } else {
+        header("location: ./edit.php?id=" . $_POST['id']);
+        die;
+    }
 }
 
 if (!isset($_GET["id"])) {
@@ -14,7 +19,7 @@ if (!isset($_GET["id"])) {
 }
 
 $category = CategoryController::find($_GET["id"]);
-$categories = CategoryController::getAll();
+// $categories = CategoryController::getAll();
 
 ?>
 

@@ -34,6 +34,7 @@
                 $_SESSION['alert'] = $errors;
                 return false;
             }
+
             $category = new Category();
             $category->name = $_POST['name'];
             $category->description = $_POST['description'];
@@ -45,11 +46,29 @@
 
         public static function update($id)
         {
+            if (strlen($_POST['name']) == 0) {
+                $errors[] = " Pavadinimas per trumpas";
+            }
+
+            if (strlen($_POST['description']) == 0) {
+                $errors[] = " Aprašymas per trumpas";
+            }
+
+            if (strlen($_POST['photo']) == 0) {
+                $errors[] = " Nuotraukos URL per trumpas";
+            }
+
+            if ($errors) {
+                $_SESSION['alert'] = $errors;
+                return false;
+            }
+
             $category = Category::find($id);
             $category->name = $_POST['name'];
             $category->description = $_POST['description'];
             $category->photo = $_POST['photo'];
             $category->update();
+            return true;
         }
 
         public static function destroy($id)

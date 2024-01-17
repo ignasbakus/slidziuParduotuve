@@ -8,7 +8,7 @@
             $_SESSION['success'] = 'Kategorija sėkmingai sukurta!';
             header("location: ./index.php");
         die;
-        }
+        } 
     }
 
     $categories = CategoryController::getAll();
