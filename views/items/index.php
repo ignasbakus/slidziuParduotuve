@@ -59,6 +59,12 @@ $categories = CategoryController::getAll();
             <div class="col-1"></div>
         </div>
         <div class="row">
+            <div class="col filterSort">
+                <h4>Rušiuoti pagal kainą:</h4>
+                <a href="./index.php?orderBy=price&order=asc">Nuo mažiausios iki didžiausios ▲</a><br><a href="./index.php?orderBy=price&order=desc">Nuo didžiausios iki mažiausios ▼</a>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
                 <div class="row mainBodyRow">

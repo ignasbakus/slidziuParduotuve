@@ -25,10 +25,6 @@ body {
   /* height: 70px; */
 }
 
-/* .headerMenuRight:not(:first-child){
-  margin-left: 5px;
-} */
-
 .headerMenuLeft {
   margin-right: 10px;
 }
@@ -139,9 +135,6 @@ body {
 
 .skiTypeName {
   text-align: center;
-  /* margin-top: auto; */
-  /* margin-bottom: auto; */
-  /* border: 1px solid black; */
   margin: 15%;
 }
 
@@ -165,7 +158,6 @@ body {
 
 .imageMainBody {
   height: 300px;
-  /* margin-top: 30px; */
 }
 
 .nameMainBody {
@@ -206,22 +198,10 @@ body {
 }
 
 .skiImages {
-  /* float: left; */
   width: 100%;
   height: 180px;
   padding-top: 10px;
   padding-bottom: 10px;
-
-  /* border: 1px solid black; */
-  /* padding-top: 10px; */
-  /* padding-bottom: 10px; */
-  /* transform: rotate(270deg); */
-  /* border-radius: 12px; */
-  /* height: 100px; */
-  /* object-fit: cover; */
-  /* border: 1px solid black; */
-  /* padding: 10px; */
-  /* margin-bottom: 10px; */
 }
 
 .buttonsCol {
@@ -235,7 +215,6 @@ body {
   transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
     0.3s box-shadow,
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-  /* padding: 14px 80px 18px 36px; */
   cursor: pointer;
 }
 
@@ -274,17 +253,6 @@ body {
 #itemImages {
   height: 430px;
 }
-
-/* .mainBodyRow{
-  height: 200px;
-} */
-
-/* .itemCardTitle {
-  height: 50px;
-  overflow: hidden; 
-  text-overflow: ellipsis;
-  white-space: nowrap;
-} */
 
 #itemLink {
   text-decoration: none;
@@ -357,4 +325,14 @@ body {
 
 .categoryEditContainer{
   margin-top: 2%;
+}
+
+.filterSort{
+  text-align: center;
+}
+
+.filterSort > a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
 }
